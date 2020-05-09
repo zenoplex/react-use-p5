@@ -1,10 +1,22 @@
 import React from 'react'
+import { useP5 } from 'react-use-p5';
+import { sketch } from './sketch';
 
-import { ExampleComponent } from 'react-use-p5'
-import 'react-use-p5/dist/index.css'
+const Component = () => {
+  const [setRef] = useP5(sketch);
+  return <div ref={setRef}></div>
+}
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  const [isVisible, setIsVisible] = React.useState(true);
+  const onClick = React.useCallback(() => {
+    setIsVisible(!isVisible);
+  }, [isVisible]);
+
+
+  return <div>{isVisible ? <Component />: null}
+  <button onClick={onClick}>toggle</button>
+  </div>
 }
 
 export default App
