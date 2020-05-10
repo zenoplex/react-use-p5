@@ -1,22 +1,30 @@
 import React from 'react'
 import { useP5 } from 'react-use-p5';
-import { sketch } from './sketch';
+import { clock } from './sketches/clock';
+import { interaction1 } from './sketches/interaction1';
 
-const Component = () => {
+const Component = ({ sketch }) => {
   const [setRef] = useP5(sketch);
   return <div ref={setRef}></div>
 }
 
 const App = () => {
+  const [sketch, setSketch] = React.useState('clock');
   const [isVisible, setIsVisible] = React.useState(true);
-  const onClick = React.useCallback(() => {
+  const onVisibleClick = React.useCallback(() => {
     setIsVisible(!isVisible);
   }, [isVisible]);
+  const onToggleSketchClick = React.useCallback(() => {
+    setSketch(sketch === 'clock' ? 'interaction1' : 'clock');
+  },[sketch])
 
-
-  return <div>{isVisible ? <Component />: null}
-  <button onClick={onClick}>toggle</button>
-  </div>
+  return (
+    <div>
+      <button onClick={onVisibleClick}>toggle visiblity</button>
+      <button onClick={onToggleSketchClick}>toggle sketch</button>
+      {isVisible ? <Component sketch={sketch === 'clock' ? clock : interaction1} />: null}
+    </div>
+  );
 }
 
 export default App
