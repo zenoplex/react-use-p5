@@ -9,9 +9,13 @@ describe('useP5', () => {
     };
   };
 
-  const Component = (): JSX.Element => {
+  interface Props {
+    unmount?: boolean;
+  }
+
+  const Component = ({ unmount }: Props): JSX.Element => {
     const [ref] = useP5(sketch);
-    return <div data-testid='wrapper' ref={ref} />;
+    return <div data-testid='wrapper' ref={!unmount ? ref : undefined} />;
   };
 
   const LazyComponent = (): JSX.Element => {
@@ -34,13 +38,23 @@ describe('useP5', () => {
     const { getByTestId } = render(<Component />);
     const wrapper = getByTestId('wrapper');
     const canvas = wrapper.querySelector('canvas.p5Canvas');
-    expect(canvas).toBeDefined();
+    expect(canvas).toBeTruthy();
   });
 
   it('should lazy render canvas', () => {
     const { getByTestId } = render(<LazyComponent />);
     const wrapper = getByTestId('wrapper');
     const canvas = wrapper.querySelector('canvas.p5Canvas');
-    expect(canvas).toBeDefined();
+    expect(canvas).toBeTruthy();
+  });
+
+  it('should remove canvas on ref removal', () => {
+    const { rerender, getByTestId } = render(<Component />);
+    const wrapper = getByTestId('wrapper');
+    expect(wrapper.querySelector('canvas.p5Canvas')).toBeTruthy();
+
+    // remove ref
+    rerender(<Component unmount />);
+    expect(wrapper.querySelector('canvas.p5Canvas')).toBeNull();
   });
 });
