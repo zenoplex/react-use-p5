@@ -1,6 +1,6 @@
 {
   "name": "@gen/react-use-p5",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "use p5 with hooks",
   "author": "zenoplex",
   "license": "MIT",
