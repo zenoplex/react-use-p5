@@ -29,7 +29,7 @@
     "p5": "*"
   },
   "devDependencies": {
-    "@testing-library/react": "10.4.7",
+    "@testing-library/react": "10.4.8",
     "@types/jest": "26.0.8",
     "@types/p5": "0.9.1",
     "@types/react": "16.9.44",
