@@ -57,7 +57,7 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-scripts": "3.4.3",
-    "release-it": "13.6.9"
+    "release-it": "13.7.0"
   },
   "files": [
     "dist"
