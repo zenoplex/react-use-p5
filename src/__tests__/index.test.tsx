@@ -69,12 +69,12 @@ describe('useP5', () => {
   it('should update sketch', () => {
     const { rerender, getByTestId } = render(<Component />);
     const wrapper = getByTestId('wrapper');
-    expect(wrapper.querySelector('canvas.p5Canvas').getAttribute('style')).toBe(
-      'width: 1000px; height: 1000px;',
-    );
+    expect(
+      wrapper.querySelector('canvas.p5Canvas')?.getAttribute('style'),
+    ).toBe('width: 1000px; height: 1000px;');
     rerender(<Component sketch={sketch2} />);
-    expect(wrapper.querySelector('canvas.p5Canvas').getAttribute('style')).toBe(
-      'width: 500px; height: 500px;',
-    );
+    expect(
+      wrapper.querySelector('canvas.p5Canvas')?.getAttribute('style'),
+    ).toBe('width: 500px; height: 500px;');
   });
 });
