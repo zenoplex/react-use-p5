@@ -39,7 +39,7 @@
     "canvas": "2.6.1",
     "cross-env": "7.0.2",
     "dotenv-cli": "4.0.0",
-    "eslint-config-prettier": "6.14.0",
+    "eslint-config-prettier": "6.15.0",
     "eslint-config-standard": "16.0.1",
     "eslint-config-standard-react": "9.2.0",
     "eslint-plugin-import": "2.22.1",
