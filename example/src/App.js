@@ -1,5 +1,5 @@
 import React from 'react'
-import { useP5 } from 'react-use-p5';
+import { useP5 } from '@gen/react-use-p5';
 import { clock } from './sketches/clock';
 import { interaction1 } from './sketches/interaction1';
 
