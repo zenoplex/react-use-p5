@@ -36,7 +36,7 @@
     "@typescript-eslint/eslint-plugin": "3.10.1",
     "@typescript-eslint/parser": "3.10.1",
     "babel-eslint": "10.1.0",
-    "canvas": "2.8.0",
+    "canvas": "2.9.0",
     "cross-env": "7.0.3",
     "dotenv-cli": "4.1.1",
     "eslint-config-prettier": "6.15.0",
