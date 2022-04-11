@@ -29,7 +29,7 @@
     "react": "^16.9.0 || ^17.0.0"
   },
   "devDependencies": {
-    "@testing-library/react": "12.1.4",
+    "@testing-library/react": "12.1.5",
     "@types/jest": "27.4.1",
     "@types/p5": "1.4.2",
     "@types/react": "17.0.44",
