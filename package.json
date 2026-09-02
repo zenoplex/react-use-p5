@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@testing-library/react": "14.1.2",
-    "@types/jest": "29.5.11",
+    "@types/jest": "29.5.14",
     "@types/p5": "1.7.4",
     "@types/react": "18.2.42",
     "@typescript-eslint/eslint-plugin": "5.62.0",
